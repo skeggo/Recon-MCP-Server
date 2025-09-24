@@ -1,9 +1,0 @@
-{
-  "mcpServers": {
-    "recon-server": {
-      "command": "/home/skego/reconMCP/.venv/bin/python",
-      "args": ["/home/skego/reconMCP/server.py"],
-      "env": {}
-    }
-  }
-}

@@ -1,0 +1,37 @@
+
+services:
+  target:
+    build: .
+    container_name: target
+    ports:
+      # SSH/FTP for host access during testing
+      - "2222:22"
+      - "2121:21"
+      # Passive FTP range (required for reliable FTP over NAT)
+      - "30000-30009:30000-30009"
+    networks:
+      - labnet
+    healthcheck:
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 22 && nc -z 127.0.0.1 21"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+  # Optional: an MCP container that can hit "target" by service name over the internal network only.
+  # mcp:
+  #   image: your-mcp-image:latest
+  #   container_name: mcp
+  #   depends_on:
+  #     - target
+  #   networks:
+  #     - labnet
+  #   # no published ports => only reachable from host via docker exec, or add a port if you need it
+  #   restart: unless-stopped
+
+networks:
+  labnet:
+    driver: bridge
+    # If you want total isolation from your host/LAN, set `internal: true`
+    # BUT then the published ports above won’t be reachable from your host.
+    # internal: true

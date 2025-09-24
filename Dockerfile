@@ -1,7 +1,7 @@
 # Use Python 3.11 slim image as base
 FROM python:3.11-slim
 
-# Update package list and install reconnaissance tools
+# Update package list and install basic reconnaissance tools
 RUN apt-get update && apt-get install -y \
     nmap \
     dnsutils \
@@ -13,11 +13,8 @@ RUN apt-get update && apt-get install -y \
     traceroute \
     iputils-ping \
     telnet \
-    masscan \
-    nikto \
-    dirb \
-    gobuster \
-    whatweb \
+    enum4linux-ng \
+    smbclient \
     && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
