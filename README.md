@@ -1,12 +1,11 @@
 # Reconnaissance MCP Server
 
-A modular MCP (Model Context Protocol) server built with FastMCP for running reconnaissance and footprinting tasks in a secure, containerized environment.
+A modular MCP (Model Context Protocol) server built with FastMCP for running reconnaissance and footprinting tasks in a secure environment.
 
 ## 🚀 Features
 
 - **MCP-compliant server** using FastMCP framework
 - **Single unified interface** (`run_tool`) for executing reconnaissance commands
-- **Containerized deployment** with Docker for isolation and security
 - **Pre-installed reconnaissance tools** including nmap, whois, dnsutils, and more
 - **Portable and reusable** across different environments
 - **Security-focused** with timeouts and proper error handling
@@ -15,7 +14,6 @@ A modular MCP (Model Context Protocol) server built with FastMCP for running rec
 
 ### System Requirements
 - Python 3.8 or higher
-- Docker (recommended for deployment)
 - Linux/macOS/Windows with WSL2
 
 ### Python Dependencies
@@ -97,19 +95,6 @@ Location: `%APPDATA%\Claude\mcp.json`
     "recon-server": {
       "command": "python",
       "args": ["C:\\path\\to\\your\Recon-MCP-Server\\server.py"],
-      "env": {}
-    }
-  }
-}
-```
-
-#### Using Docker with MCP Client:
-```json
-{
-  "servers": {
-    "recon-server": {
-      "command": "docker",
-      "args": ["run", "-i", "recon-mcp"],
       "env": {}
     }
   }
