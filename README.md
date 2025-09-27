@@ -30,7 +30,7 @@ fastmcp>=2.0.0
 1. **Clone the repository:**
    ```bash
    git clone <your-repo-url>
-   cd reconMCP
+   cd Recon-MCP-Server
    ```
 
 2. **Build the Docker image:**
@@ -48,7 +48,7 @@ fastmcp>=2.0.0
 1. **Clone and navigate to the project:**
    ```bash
    git clone <your-repo-url>
-   cd reconMCP
+   cd Recon-MCP-Server
    ```
 
 2. **Create a virtual environment:**
@@ -81,7 +81,7 @@ Location: `~/.config/claude/mcp.json`
   "servers": {
     "recon-server": {
       "command": "python",
-      "args": ["/path/to/your/reconMCP/server.py"],
+      "args": ["/path/to/your/Recon-MCP-Server/server.py"],
       "env": {}
     }
   }
@@ -96,7 +96,7 @@ Location: `%APPDATA%\Claude\mcp.json`
   "servers": {
     "recon-server": {
       "command": "python",
-      "args": ["C:\\path\\to\\your\\reconMCP\\server.py"],
+      "args": ["C:\\path\\to\\your\Recon-MCP-Server\\server.py"],
       "env": {}
     }
   }
