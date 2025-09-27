@@ -23,25 +23,8 @@ fastmcp>=2.0.0
 
 ## 🛠️ Installation & Setup
 
-### Option 1: Docker Deployment (Recommended)
 
-1. **Clone the repository:**
-   ```bash
-   git clone <your-repo-url>
-   cd Recon-MCP-Server
-   ```
-
-2. **Build the Docker image:**
-   ```bash
-   docker build -t recon-mcp .
-   ```
-
-3. **Run the container:**
-   ```bash
-   docker run -i recon-mcp
-   ```
-
-### Option 2: Local Development Setup
+### Option 1: Local Development Setup
 
 1. **Clone and navigate to the project:**
    ```bash
@@ -94,7 +77,7 @@ Location: `%APPDATA%\Claude\mcp.json`
   "servers": {
     "recon-server": {
       "command": "python",
-      "args": ["C:\\path\\to\\your\Recon-MCP-Server\\server.py"],
+      "args": ["C:\\path\\to\\your\\Recon-MCP-Server\\server.py"],
       "env": {}
     }
   }
