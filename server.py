@@ -894,6 +894,3 @@ def enum4linux_scan(ip: str, username: str = "", password: str = "", domain: str
             "command": " ".join(command) if 'command' in locals() else "enum4linux"
         }
 
-if __name__ == "__main__":
-    # Run the MCP server with stdio transport
-    mcp.run(transport="stdio")

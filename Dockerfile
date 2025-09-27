@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y \
     telnet \
     enum4linux-ng \
     smbclient \
+    nikto \
     && rm -rf /var/lib/apt/lists/*
 
 # Set working directory

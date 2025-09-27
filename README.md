@@ -180,103 +180,17 @@ Executes reconnaissance tools with specified arguments.
 }
 ```
 
-## 🛡️ Security Considerations
-
-### Built-in Security Features
-- **Command timeout**: 5-minute limit prevents hanging processes
-- **Subprocess protection**: Uses list-based arguments to prevent shell injection
-- **Container isolation**: Docker deployment isolates tools from host system
-- **Error handling**: Graceful handling of missing tools and failed commands
-
-### Important Security Notes
-⚠️ **WARNING**: This tool is designed for authorized security testing only.
-
-- Only use on networks and systems you own or have explicit permission to test
-- Be aware of local laws and regulations regarding network scanning
-- Consider using VPNs or isolated networks for testing
-- Monitor and log all reconnaissance activities
-- Some tools may trigger security alerts or be detected by monitoring systems
-
-### Recommended Security Practices
-- Run in isolated Docker containers
-- Use dedicated testing networks
-- Implement proper logging and monitoring
-- Regular security updates of base images and tools
-- Restrict network access where possible
-
-## 📦 Available Reconnaissance Tools
-
-The Docker container includes these pre-installed tools:
-
-| Tool | Purpose | Example Usage |
-|------|---------|---------------|
-| **nmap** | Network discovery and security auditing | Port scanning, service detection |
-| **masscan** | Fast port scanner | Large-scale port scanning |
-| **dig** | DNS lookup utility | DNS record queries |
-| **whois** | Domain registration information | Domain ownership lookup |
-| **curl/wget** | HTTP clients | Web requests and downloads |
-| **netcat** | Network debugging | Port connectivity testing |
-| **traceroute** | Network route tracing | Network path analysis |
-| **nikto** | Web server scanner | Web vulnerability scanning |
-| **dirb** | Web content scanner | Directory enumeration |
-| **gobuster** | Directory/file/DNS busting | Fast directory discovery |
-| **whatweb** | Web technology identifier | Technology stack detection |
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-1. **Tool not found error:**
-   - Ensure the tool is installed in your environment
-   - Check if running in Docker with pre-installed tools
-
-2. **Permission denied:**
-   - Some tools require elevated privileges
-   - Consider running Docker with appropriate permissions
-
-3. **Timeout errors:**
-   - Increase timeout value for long-running scans
-   - Break large scans into smaller chunks
-
-4. **MCP connection issues:**
-   - Verify the path in your MCP configuration
-   - Check that Python environment is accessible
-   - Ensure all dependencies are installed
-
-## 📝 Development
-
-### Adding New Tools
-
-To add new reconnaissance tools:
-
-1. Install the tool in the Dockerfile
-2. The `run_tool` function automatically supports any installed command
-3. Update documentation with usage examples
-
-### Testing
-
-Test the server locally:
-```bash
-python server.py
-```
-
-Test with Docker:
-```bash
-docker build -t recon-mcp . && docker run -i recon-mcp
-```
-
-## 📄 License
-
-This project is provided as-is for educational and authorized penetration testing purposes only. Users are responsible for compliance with applicable laws and regulations.
-
 ## ⚠️ Disclaimer
 
-This tool is intended for authorized security professionals and researchers. Unauthorized access to computer networks is illegal. Always ensure you have proper authorization before conducting any reconnaissance activities.
+**IMPORTANT: This tool is intended for authorized security professionals and researchers only.**
 
-## 🤝 Contributing
+- This software is provided for educational and authorized penetration testing purposes only
+- Users are responsible for compliance with all applicable laws and regulations
+- Unauthorized access to computer networks, systems, or data is illegal and unethical
+- Always ensure you have explicit written permission before conducting any reconnaissance activities
+- The authors and contributors are not responsible for any misuse of this tool
+- Use of this tool may trigger security alerts or be detected by monitoring systems
+- Some reconnaissance techniques may be considered aggressive and could impact target systems
+- Users assume all legal and ethical responsibility for their actions
 
-Contributions are welcome! Please ensure all contributions maintain the security-focused approach and include appropriate documentation.
-
-## 📞 Support
-
-For issues and questions, please open an issue in the GitHub repository.
+**By using this tool, you acknowledge that you understand these restrictions and agree to use it only for lawful purposes.**
